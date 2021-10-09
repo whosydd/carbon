@@ -14,56 +14,33 @@
 
 ## Configuration
 
-如果你不想使用扩展预设的主题，可以选择自己配置，简单的方式是直接从 [carbon.now.sh](https://carbon.now.sh/) 中导出
+### Theme
 
-![export-config](https://raw.githubusercontent.com/whosydd/images-in-one/main/202110092129742.png)
+如果你不想使用网站的默认主题，那么可以选择将以下配置项设置为`false`，默认为`true`
 
 ```json
-// default
-"carbon.theme": {
-    "paddingVertical": "56px",
-    "paddingHorizontal": "56px",
-    "backgroundImage": null,
-    "backgroundImageSelection": null,
-    "backgroundMode": "color",
-    "backgroundColor": "rgba(171, 184, 195, 1)",
-    "dropShadow": true,
-    "dropShadowOffsetY": "20px",
-    "dropShadowBlurRadius": "68px",
-    "theme": "dracula-pro",
-    "windowTheme": "none",
-    "language": "auto",
-    "fontFamily": "Droid Sans Mono",
-    "fontSize": "14px",
-    "lineHeight": "133%",
-    "windowControls": true,
-    "widthAdjustment": true,
-    "lineNumbers": false,
-    "firstLineNumber": 1,
-    "exportSize": "2x",
-    "watermark": false,
-    "squaredImage": false,
-    "hiddenCharacters": false,
-    "name": "",
-    "width": 680
-  }
+// settings.json
+"carbon.defaultTheme": true // default
 ```
+
+然后从 [carbon.now.sh](https://carbon.now.sh/) 中导出你的配置，修改以下选项
+
+```json
+// settings.json
+"carbon.theme": {} // default
+```
+
+![export-config](https://raw.githubusercontent.com/whosydd/images-in-one/main/202110092129742.png)
 
 #### Domain
 
 由于是通过`ajax`获取图片，domain 默认使用[[petersolopov/carbonara](https://github.com/petersolopov/carbonara)提供的`carbonara-42.herokuapp.com`，如果你想自己配置 domain，可以选择[fork](https://github.com/petersolopov/carbonara)此仓库自行搭建服务器（例如可以使用[vercel](https://vercel.com/)部署），然后配置以下选项
 
 ```json
+// settings.json
 "carbon.domain": "carbonara-42.herokuapp.com" // default
 ```
 
-### Default theme
-
-如果你只想使用网站的默认主题，那么可以选择将以下配置项设置为`true`，默认为`false`
-
-```json
-"carbon.isDefaultTheme": false // default
-```
 
 ## Thanks
 

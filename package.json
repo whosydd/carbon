@@ -42,33 +42,7 @@
         "properties": {
           "carbon.theme": {
             "type": "object",
-            "default": {
-              "paddingVertical": "56px",
-              "paddingHorizontal": "56px",
-              "backgroundImage": null,
-              "backgroundImageSelection": null,
-              "backgroundMode": "color",
-              "backgroundColor": "rgba(171, 184, 195, 1)",
-              "dropShadow": true,
-              "dropShadowOffsetY": "20px",
-              "dropShadowBlurRadius": "68px",
-              "theme": "dracula-pro",
-              "windowTheme": "none",
-              "language": "auto",
-              "fontFamily": "Droid Sans Mono",
-              "fontSize": "14px",
-              "lineHeight": "133%",
-              "windowControls": true,
-              "widthAdjustment": true,
-              "lineNumbers": false,
-              "firstLineNumber": 1,
-              "exportSize": "2x",
-              "watermark": false,
-              "squaredImage": false,
-              "hiddenCharacters": false,
-              "name": "",
-              "width": 680
-            },
+            "default": {},
             "description": "Carbon theme config",
             "scope": "resource"
           },
@@ -77,9 +51,9 @@
             "default": "carbonara-42.herokuapp.com",
             "description": "Set api domain"
           },
-          "carbon.isDefaultTheme": {
+          "carbon.defaultTheme": {
             "type": "boolean",
-            "default": false,
+            "default": true,
             "description": "Use default theme"
           }
         }

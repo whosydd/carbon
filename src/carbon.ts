@@ -34,7 +34,7 @@ export default (file: Object) => {
   const config = vscode.workspace.getConfiguration('carbon')
   const domain: string | undefined = config.get('domain')
   const theme: ThemeConfig | undefined = config.get('theme')
-  const isDefault: boolean | undefined = config.get('isDefaultTheme')
+  const isDefault: boolean | undefined = config.get('defaultTheme')
 
   // 获取项目根目录
   const workspace = vscode.workspace.workspaceFolders
@@ -90,7 +90,8 @@ export default (file: Object) => {
         // 从网站打开
         if (flag === 'Open in carbon.now.sh') {
           const url = new URL('https://carbon.now.sh/')
-          if (theme !== undefined) {
+
+          if (theme !== undefined && Object.keys(theme).length !== 0) {
             url.searchParams.set('bg', theme.backgroundColor)
             url.searchParams.set('t', theme.theme)
             url.searchParams.set('wt', theme.windowTheme)
@@ -110,13 +111,13 @@ export default (file: Object) => {
             url.searchParams.set('es', theme.exportSize)
             url.searchParams.set('wm', theme.watermark.toString())
             url.searchParams.set('code', code)
-
-            vscode.env.openExternal(
-              vscode.Uri.parse(
-                isDefault ? `https://carbon.now.sh/?code=${encodeURIComponent(code)}` : url.href
-              )
-            )
           }
+
+          vscode.env.openExternal(
+            vscode.Uri.parse(
+              isDefault ? `https://carbon.now.sh/?code=${encodeURIComponent(code)}` : url.href
+            )
+          )
         }
       })
   } catch (error: any) {
