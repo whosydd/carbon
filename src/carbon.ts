@@ -62,7 +62,7 @@ export default (file: Object) => {
       )
     }
 
-    const params = Object.assign({ code }, theme)
+    const params = Object.assign({ code }, isDefault ? null : theme)
 
     // 发送ajax请求
     const res = axios.post(`https://${domain}/api/cook`, params, {

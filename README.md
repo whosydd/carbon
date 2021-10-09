@@ -51,7 +51,7 @@
 
 #### Domain
 
-由于是通过`ajax`获取图片，domain默认使用[[petersolopov/carbonara](https://github.com/petersolopov/carbonara)提供的`carbonara-42.herokuapp.com`，如果你想自己配置domain，可以选择[fork](https://github.com/petersolopov/carbonara)此仓库自行搭建服务器（例如可以使用[vercel](https://vercel.com/)部署），然后配置以下选项
+由于是通过`ajax`获取图片，domain 默认使用[[petersolopov/carbonara](https://github.com/petersolopov/carbonara)提供的`carbonara-42.herokuapp.com`，如果你想自己配置 domain，可以选择[fork](https://github.com/petersolopov/carbonara)此仓库自行搭建服务器（例如可以使用[vercel](https://vercel.com/)部署），然后配置以下选项
 
 ```json
 "carbon.domain": "carbonara-42.herokuapp.com" // default
@@ -68,7 +68,7 @@
 ## Thanks
 
 [carbon-now-sh](https://marketplace.visualstudio.com/items?itemName=ericadamski.carbon-now-sh)
+
 [petersolopov/carbonara](https://github.com/petersolopov/carbonara)
 
 Icons made by <a href="https://www.freepik.com" title="Freepik">Freepik</a> from <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a>
-
