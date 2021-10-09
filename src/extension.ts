@@ -1,10 +1,12 @@
 import * as vscode from 'vscode'
-import carbon from './carbon'
+import download from './utils/download'
+import openWeb from './utils/openWeb'
 
 export function activate(context: vscode.ExtensionContext) {
-  let getImg = vscode.commands.registerCommand('carbon.getImg', carbon)
+  let dl = vscode.commands.registerCommand('carbon.download', download)
+  let open = vscode.commands.registerCommand('carbon.openWeb', openWeb)
 
-  context.subscriptions.push(getImg)
+  context.subscriptions.push(dl, open)
 }
 
 export function deactivate() {}

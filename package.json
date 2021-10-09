@@ -10,26 +10,40 @@
     "Other"
   ],
   "activationEvents": [
-    "onCommand:carbon.getImg"
+    "onCommand:carbon.download",
+    "onCommand:carbon.openWeb"
   ],
   "main": "./dist/extension.js",
   "contributes": {
     "commands": [
       {
-        "command": "carbon.getImg",
-        "title": "Carbon"
+        "command": "carbon.download",
+        "title": "Carbon: Download PNG"
+      },
+      {
+        "command": "carbon.openWeb",
+        "title": "Carbon: Open in carbon.now.sh"
       }
     ],
     "menus": {
       "commandPalette": [
         {
-          "command": "carbon.getImg",
+          "command": "carbon.download",
+          "when": "null"
+        },
+        {
+          "command": "carbon.openWeb",
           "when": "null"
         }
       ],
       "editor/context": [
         {
-          "command": "carbon.getImg",
+          "command": "carbon.download",
+          "group": "0_modification",
+          "when": "editorHasSelection"
+        },
+        {
+          "command": "carbon.openWeb",
           "group": "0_modification",
           "when": "editorHasSelection"
         }
@@ -50,11 +64,6 @@
             "type": "string",
             "default": "carbonara-42.herokuapp.com",
             "description": "Set api domain"
-          },
-          "carbon.defaultTheme": {
-            "type": "boolean",
-            "default": true,
-            "description": "Use default theme"
           }
         }
       }
