@@ -27,7 +27,7 @@
 
 #### Domain
 
-由于是通过`ajax`获取图片，domain 默认使用[[petersolopov/carbonara](https://github.com/petersolopov/carbonara)提供的`carbonara-42.herokuapp.com`，如果你想配置自己的 domain，可以选择[fork](https://github.com/petersolopov/carbonara)此仓库自行搭建服务器（可以使用[vercel](https://vercel.com/)部署），然后配置以下选项
+由于是通过`ajax`获取图片，domain 默认使用[petersolopov/carbonara](https://github.com/petersolopov/carbonara)提供的`carbonara-42.herokuapp.com`，如果你想配置自己的 domain，可以选择[fork](https://github.com/petersolopov/carbonara)此仓库自行搭建服务器（可以使用[vercel](https://vercel.com/)部署），然后配置以下选项
 
 ```json
 // settings.json
@@ -36,7 +36,7 @@
 
 ## Issues
 
-目前下载图片的请求时间以及**第一次**打开网页的缓冲时间都稍长，我还未找到办法解决，如果你有好的解决办法，[欢迎pr~](https://github.com/whosydd/carbon)
+目前服务器的响应时间基本在 3~5 秒，而**第一次**网页加载时间也稍长，我还未找到方法缓解这一情况，如果你有好的解决办法，[欢迎 pr~](https://github.com/whosydd/carbon)
 
 ## Thanks
 
