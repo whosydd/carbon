@@ -2,9 +2,9 @@ import { URL } from 'url'
 import * as vscode from 'vscode'
 import config from './config'
 
-export default (file: object) => {
+export default async (file: vscode.FileType) => {
   // 获取配置项
-  const { theme, code } = config(file)
+  const { theme, code } = await config(file)
   let isDefault: boolean
 
   try {

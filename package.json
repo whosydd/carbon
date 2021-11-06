@@ -2,7 +2,7 @@
   "name": "carbon",
   "displayName": "Carbon",
   "description": "Create and share beautiful images of your source code",
-  "version": "0.2.0",
+  "version": "0.3.0",
   "engines": {
     "vscode": "^1.61.0"
   },
@@ -87,7 +87,7 @@
     "carbon",
     "carbon.now.sh"
   ],
-  "author": "whosydd <dev.youngkwok718@gmail.com>",
+  "author": "GY <dev.youngkwok718@gmail.com>",
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/whosydd/carbon/issues"
