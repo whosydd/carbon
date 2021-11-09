@@ -21,7 +21,7 @@ export default async (file: vscode.FileType) => {
     // 如果工作区中存在的多个文件夹，显示选择框
     if (workspace.length > 1) {
       const pick = await vscode.window.showWorkspaceFolderPick()
-      if (!pick) throw new Error('')
+      if (!pick) return
       rootPath = pick.uri.fsPath
     } else {
       const pick = workspace[0]
@@ -37,14 +37,13 @@ export default async (file: vscode.FileType) => {
     )
     const res = await axios.post(`https://${domain}/api/cook`, params, {
       responseType: 'arraybuffer',
-      timeout: 5000,
+      timeout: 8 * 1000,
     })
     if (!fs.existsSync(rootPath + '/carbon')) fs.mkdirSync(rootPath + '/carbon')
     fs.createWriteStream(imgPath).write(res.data)
     vscode.window.showInformationMessage('Done')
     vscode.env.openExternal(vscode.Uri.file(imgPath))
   } catch (error: any) {
-    if (error.message === '') return
     vscode.window.showErrorMessage(error.message)
   }
 }

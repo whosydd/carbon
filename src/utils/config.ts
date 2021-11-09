@@ -32,18 +32,15 @@ export default (
   return new Promise(async (resolve, reject) => {
     try {
       // 获取文件名
-      const filename = file.toString().split('/').pop()
+      const filename = file.toString().split('/').pop()!
 
       // 获取配置项
       const config = vscode.workspace.getConfiguration('carbon')
-      const domain: string | undefined = config.get('domain')
-      const theme: ThemeConfig | undefined = config.get('theme')
-
-      if (!filename || !domain || !theme) throw new Error('')
+      const domain: string = config.get('domain')!
+      const theme: ThemeConfig = config.get('theme')!
 
       // 获取选中代码块
-      const editor = vscode.window.activeTextEditor
-      if (!editor) throw new Error('hello world!')
+      const editor = vscode.window.activeTextEditor!
       const {
         document: { lineAt, getText },
         selection: { start, end, active },
@@ -68,7 +65,6 @@ export default (
         code,
       })
     } catch (error: any) {
-      if (error.message === '') return
       vscode.window.showErrorMessage(error.message)
     }
   })
