@@ -22,7 +22,7 @@ interface ThemeConfig {
 }
 
 export default (
-  file: vscode.FileType
+  file: vscode.Uri
 ): Promise<{
   filename: string
   domain: string

@@ -2,7 +2,7 @@ import { URL } from 'url'
 import * as vscode from 'vscode'
 import config from './config'
 
-export default async (file: vscode.FileType) => {
+export default async (file: vscode.Uri) => {
   // 获取配置项
   const { theme, code } = await config(file)
   let isDefault: boolean

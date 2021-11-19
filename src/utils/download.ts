@@ -5,7 +5,7 @@ import * as path from 'path'
 import * as vscode from 'vscode'
 import config from './config'
 
-export default async (file: vscode.FileType) => {
+export default async (file: vscode.Uri) => {
   try {
     // 获取配置项
     const { filename, domain, theme, code } = await config(file)
