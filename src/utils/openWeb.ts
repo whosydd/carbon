@@ -13,9 +13,6 @@ export default async (file: vscode.Uri) => {
   // 替换 &
   temp = temp.replace(/\&/g, '%26')
 
-  // 替换 ?
-  temp = temp.replace(/\&/g, '%3F')
-
   try {
     const url = new URL('https://carbon.now.sh/')
 
