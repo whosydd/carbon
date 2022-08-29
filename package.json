@@ -2,7 +2,7 @@
   "name": "carbon",
   "displayName": "Carbon",
   "description": "Create and share beautiful images of your source code",
-  "version": "0.3.1",
+  "version": "0.3.2",
   "engines": {
     "vscode": "^1.61.0"
   },
