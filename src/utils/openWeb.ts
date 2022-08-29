@@ -7,6 +7,8 @@ export default async (file: vscode.Uri) => {
   const { theme, code } = await config(file)
   let isDefault: boolean
 
+  const newCode = code.replace('+', '%2B')
+
   try {
     const url = new URL('https://carbon.now.sh/')
 
@@ -29,7 +31,7 @@ export default async (file: vscode.Uri) => {
       url.searchParams.set('lh', theme.lineHeight)
       url.searchParams.set('es', theme.exportSize)
       url.searchParams.set('wm', theme.watermark.toString())
-      url.searchParams.set('code', code)
+      url.searchParams.set('code', newCode)
 
       isDefault = false
     } else {
@@ -38,7 +40,7 @@ export default async (file: vscode.Uri) => {
 
     vscode.env.openExternal(
       vscode.Uri.parse(
-        isDefault ? `https://carbon.now.sh/?code=${encodeURIComponent(code)}` : url.href
+        isDefault ? `https://carbon.now.sh/?code=${encodeURIComponent(newCode)}` : url.href
       )
     )
   } catch (error: any) {
