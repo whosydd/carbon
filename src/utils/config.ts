@@ -25,8 +25,7 @@ export default (
   file: vscode.Uri
 ): Promise<{
   filename: string
-  domain: string
-  theme: ThemeConfig
+  theme: string
   code: string
 }> => {
   return new Promise(async (resolve, reject) => {
@@ -35,9 +34,7 @@ export default (
       const filename = file.toString().split('/').pop()!
 
       // 获取配置项
-      const config = vscode.workspace.getConfiguration('carbon')
-      const domain: string = config.get('domain')!
-      const theme: ThemeConfig = config.get('theme')!
+      const theme: string = vscode.workspace.getConfiguration('carbon').get('theme')!
 
       // 获取选中代码块
       const editor = vscode.window.activeTextEditor!
@@ -60,7 +57,6 @@ export default (
 
       resolve({
         filename,
-        domain,
         theme,
         code,
       })
