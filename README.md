@@ -16,27 +16,34 @@
 
 ### Theme
 
-如果你不想使用网站的默认主题，那么可以选择从 [carbon.now.sh](https://carbon.now.sh/) 中导出你的配置，修改以下选项
+```json
+// settings.json
+"carbon.theme": "Dracula ProPurchase" // default
+```
+
+### Domain
+
+由于是通过`ajax`获取图片，domain 默认使用`carbon-api.vercel.app`，如果你想配置自己的 domain，可以参考 [whosydd/carbon-api](https://github.com/whosydd/carbon-api) 使用 [Vercel](https://vercel.com/) 部署，然后配置以下选项
 
 ```json
 // settings.json
-"carbon.theme": {} // default
+"carbon.domain": "carbon-api.vercel.app" // default
 ```
 
-![export-config](https://raw.githubusercontent.com/whosydd/images-in-one/main/202110092129742.png)
+### Open image
 
-#### Domain
-
-由于是通过`ajax`获取图片，domain 默认使用[petersolopov/carbonara](https://github.com/petersolopov/carbonara)提供的`carbonara-42.herokuapp.com`，如果你想配置自己的 domain，可以选择[fork](https://github.com/petersolopov/carbonara)此仓库自行搭建服务器（可以使用[vercel](https://vercel.com/)部署），然后配置以下选项
+下载图片后，是否打开图片
 
 ```json
 // settings.json
-"carbon.domain": "carbonara-42.herokuapp.com" // default
+"carbon.openImg": true // default
 ```
 
-## Issues
 
-目前服务器的响应时间基本在` 3~5 `秒，而**第一次**网页加载时间也稍长，我还未找到方法缓解这一情况，如果你有好的解决办法，[欢迎 pr~](https://github.com/whosydd/carbon)
+
+## Known Issues
+
+由于我在 Vercel 使用的是 `Hobby plan`，所以每次请求时会有**10秒**`timeout`的限制，如果使用时出现无法下载的情况，请重新尝试。
 
 ## Thanks
 

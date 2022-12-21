@@ -2,7 +2,7 @@
   "name": "carbon",
   "displayName": "Carbon",
   "description": "Create and share beautiful images of your source code",
-  "version": "0.3.4",
+  "version": "0.4.0",
   "engines": {
     "vscode": "^1.61.0"
   },
@@ -54,16 +54,48 @@
         "type": "object",
         "title": "carbon configuration",
         "properties": {
-          "carbon.theme": {
-            "type": "object",
-            "default": {},
-            "description": "Carbon theme config",
-            "scope": "resource"
-          },
           "carbon.domain": {
             "type": "string",
-            "default": "carbonara-42.herokuapp.com",
-            "description": "Set api domain"
+            "default": "carbon-api.vercel.app"
+          },
+          "carbon.theme": {
+            "type": "string",
+            "default": "Dracula ProPurchase",
+            "enum": [
+              "3024 Night",
+              "A11y Dark",
+              "Blackboard",
+              "Base 16 (Dark)",
+              "Cobalt",
+              "Dracula ProPurchase",
+              "Duotone",
+              "Hopscotch",
+              "Lucario",
+              "Material",
+              "Monokai",
+              "Night Owl",
+              "Nord",
+              "Oceanic Next",
+              "One Light",
+              "One Dark",
+              "Panda",
+              "Paraiso",
+              "Seti",
+              "Shades of Purple",
+              "Solarized (Dark)",
+              "Solarized (Light)",
+              "SynthWave '84",
+              "Twilight",
+              "Verminal",
+              "VSCode",
+              "Yeti",
+              "Zenburn"
+            ],
+            "description": "Carbon theme config"
+          },
+          "carbon.openImg": {
+            "type": "boolean",
+            "default": true
           }
         }
       }
@@ -96,8 +128,12 @@
   "publisher": "whosydd",
   "icon": "icon.png",
   "dependencies": {
+    "@types/download": "^8.0.1",
     "axios": "^0.22.0",
-    "dayjs": "^1.10.7"
+    "dayjs": "^1.10.7",
+    "download": "^8.0.0",
+    "playwright-aws-lambda": "^0.9.0",
+    "playwright-core": "^1.28.1"
   },
   "devDependencies": {
     "@types/glob": "^7.1.4",
