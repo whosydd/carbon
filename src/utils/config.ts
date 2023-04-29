@@ -48,8 +48,9 @@ export default (
 
       if (!code.match(/\w+/)) throw new Error(`Selected code is empty, refusing to send to carbon.`)
 
+      // TODO: 添加配置项，设定最大代码长度
       const maxCharacterLength = 1000
-      if (code.length > 1000) {
+      if (code.length > maxCharacterLength) {
         throw new Error(
           `Selected code is longer than ${maxCharacterLength} characters, refusing to send to carbon.`
         )
